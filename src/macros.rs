@@ -4,13 +4,10 @@ macro_rules! Q_OBJECT(
         $t:ty :
             $(
                 slot fn $name:ident ($($at:ty),*);
-                signal fn $sname:ident ();
-            )*
-/*
+            )*,
             $(
                 signal fn $sname:ident ( );
             )*
-*/
     ) => (
 /*
         impl $t {
