@@ -9,8 +9,7 @@
 
 extern "C" typedef void *(QrsSlotFunction)(void *data, int slot, QVariant **args);
 
-class QrsDynamicMetaObject
-{
+class QrsDynamicMetaObject{
 public:
     QrsDynamicMetaObject();
     virtual ~QrsDynamicMetaObject();
@@ -48,8 +47,7 @@ private:
     void finalize();
 };
 
-class QrsDynamicObject : public QObject
-{
+class QrsDynamicObject : public QObject{
 public:
     QrsDynamicObject(QrsSlotFunction *fun, void *data, QMetaObject *mo, int n_slots);
     virtual const QMetaObject* metaObject() const;

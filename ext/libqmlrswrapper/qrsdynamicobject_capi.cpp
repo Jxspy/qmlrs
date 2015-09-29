@@ -9,20 +9,17 @@ extern "C" void qmlrs_metaobject_destroy(QrsDynamicMetaObject *mo) {
 }
 
 extern "C" void qmlrs_metaobject_add_slot(QrsDynamicMetaObject *mo, const char *name, uint name_len,
-                                          uint argc)
-{
+                                          uint argc){
     mo->addSlot(QString::fromUtf8(name, name_len), argc);
 }
 
 extern "C" void qmlrs_metaobject_add_signal(QrsDynamicMetaObject *mo, const char *name, uint name_len,
-                                            uint argc)
-{
+                                            uint argc){
     mo->addSignal(QString::fromUtf8(name, name_len), argc);
 }
 
 extern "C" QObject *qmlrs_metaobject_instantiate(QrsDynamicMetaObject *mo, QrsSlotFunction fun, 
-                                                 void *data)
-{
+                                                 void *data){
     return mo->create(fun, data);
 }
 

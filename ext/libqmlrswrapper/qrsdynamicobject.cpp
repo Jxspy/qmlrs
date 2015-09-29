@@ -1,12 +1,10 @@
 #include "qrsdynamicobject.h"
 
 QrsDynamicMetaObject::QrsDynamicMetaObject()
-: _mo(NULL)
-{
+: _mo(NULL){
 }
 
-QrsDynamicMetaObject::~QrsDynamicMetaObject()
-{
+QrsDynamicMetaObject::~QrsDynamicMetaObject(){
     if (_mo) {
         delete _mo->d.stringdata;
         delete _mo->d.data;
@@ -18,8 +16,7 @@ void qrsStaticDynamicMetacall(QObject *qobj, QMetaObject::Call c, int id, void *
     qobj->qt_metacall(c, id, a);
 }
 
-void QrsDynamicMetaObject::finalize()
-{
+void QrsDynamicMetaObject::finalize(){
     _mo = new QMetaObject;
     _mo->d.superdata = &QObject::staticMetaObject;
     _mo->d.extradata = NULL;

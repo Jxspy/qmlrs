@@ -52,8 +52,7 @@ rust_fun void qmlrs_engine_load_from_data(QrsApplicationEngine *engine, const ch
 }
 
 rust_fun void qmlrs_engine_invoke(QrsApplicationEngine *engine, const char *method,
-                                  QVariant *result, const QVariantList *args)
-{
+                                  QVariant *result, const QVariantList *args){
     if (args->size() > 10) {
         qFatal("Cannot invoke method with more than 10 arguments");
     }
